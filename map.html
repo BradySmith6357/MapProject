@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="map.css">
+ <script type="text/javascript" src="map.js"></script>
+</head>
+<body ng-controller="first">
+	<div >
+		<img id="map" ng-click="showCoords($event)" src="https://raw.githubusercontent.com/RefactorU/exercise-starters/master/client-js/gold-rush/topo-co.jpg">
+			<div ng-repeat="markers in repeatArray" >
+				<img  id="marker" style="top:{{markers.y-22}}px; left:{{markers.x-10}}px" ng-hide="hideMarker" ng-click="hideMarker=true" ng-Mouseenter="infoHide=true" ng-Mouseleave="infoHide=false" src="http://vignette2.wikia.nocookie.net/newsupermariobrothers2/images/2/20/Coin.gif/revision/latest?cb=20120815171249">
+				<input id="textbox" ng-model="info" ng-hide="submitHide" style="top:{{markers.y}}px; left:{{markers.x-10}}px">
+				<input id="textbox" ng-click="submitHide=true" ng-hide="submitHide" style="top:{{markers.y+20}}px; left:{{markers.x-10}}px" type="submit" value="submit">
+				<p id="infobox" ng-show="infoHide" style="top:{{markers.y-85}}px; left:{{markers.x}}px">{{info}}</p>
+			</div>
+		
+
+	</div>
+
+
+</body>
+</html>
